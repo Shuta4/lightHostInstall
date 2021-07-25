@@ -6,17 +6,24 @@ Dependencies
 ------------------
 ### Wine
 This installation guide was tested on `wine-6.13` from `winehq-devel` package.
+
 [Install wine](https://wiki.winehq.org/Download)
 
 ### Winetricks
-This installation guide was tested on `winetricks 20210206-next` from [github repository](https://github.com/Winetricks/winetricks).
+This installation guide was tested on `winetricks 20210206-next` 
+from [github repository](https://github.com/Winetricks/winetricks).
+
 [Install winetricks](https://github.com/Winetricks/winetricks#installing)
 
 ### LightHost
-Download latest lightHost release for `win64` from [github](https://github.com/rolandoislas/LightHost/releases) and extract `Light Host.exe` to whatever directory you want.
+Download latest lightHost release for `win64` 
+from [github](https://github.com/rolandoislas/LightHost/releases) and 
+extract `Light Host.exe` to whatever directory you want.
 
 ### PulseAudio and Pactl
-To create virtual audio in/out i use `pactl` command if your system does not use [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) install it or edit `lightHost` file: comment `pactl` lines with `#`.
+To create virtual audio in/out i use `pactl` command 
+if your system does not use [PulseAudio](https://www.freedesktop.org/wiki/Software/PulseAudio/) 
+install it or edit `lightHost` file: comment `pactl` lines with `#`.
 
 Installation
 --------------
@@ -52,10 +59,12 @@ sudo chmod +x lightHost.desktop
 # Move it to applications dir
 sudo mv lightHost.desktop /usr/share/applications/
 ```
-6. Now you should be able to start lightHost by `lightHost` command. Feel free to install windows VST3 plugins to your lighthost wineprefix.
+6. Now you should be able to start lightHost by `lightHost` command. 
+Feel free to install windows VST3 plugins to your lighthost wineprefix.
 
 Running
 ----------
 1. Start lightHost with `lightHost` command or desktop entry.
-2. Run `pavucontrol` command to enter audio configuration, go to `Playback` tab and change device for `lightHost.exe` audio stream to `lighthost Audio/Sink sink`.
+2. Run `pavucontrol` command to enter audio configuration, go to `Playback` tab and 
+change device for `lightHost.exe` audio stream to `lighthost Audio/Sink sink`.
 3. Then on `Recording` tab you should be able to select `Monitor of lighthost Audio/Sink sink` as source. 
