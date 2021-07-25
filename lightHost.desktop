@@ -1,0 +1,20 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;
+Comment[en_US]=Manage VST/VST3 audio plugins
+Comment=Manage VST/VST3 audio plugins
+Exec=/usr/bin/lightHost
+GenericName[en_US]=
+GenericName=
+Icon=sound-recorder
+MimeType=
+Name[en_US]=LightHost
+Name=LightHost
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

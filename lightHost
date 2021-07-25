@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Setting environment variables
+
+# Path to wineprefix where VST plugins and needed by lightHost
+# components is installed
+# Change it if you are using another wineprefix for lightHost
+export WINEPREFIX="$HOME/.local/share/wineprefixes/lighthost"
+
+# Path to lightHost.exe file
+# Change it if you extracted `Light Host.exe` to another path.
+export LIGHTHOST="/etc/programs/lightHost/lightHost.exe"
+
+# Workaround for bug: https://bugs.winehq.org/show_bug.cgi?id=49764
+# from https://gitlab.freedesktop.org/mesa/mesa/-/issues/4112#workaround
+export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+
+# Path to dxvk state cache
+export DXVK_STATE_CACHE_PATH="$HOME/.cache/lightHost.dxvk"
+mkdir -p "$DXVK_STATE_CACHE_PATH"
+
+# Path to dxvk logs
+export DXVK_LOG_PATH="$DXVK_STATE_CACHE_PATH"
+mkdir -p "$DXVK_LOG_PATH"
+
+# Loading pulseaudio module
+
+MODULEID=$(pactl load-module module-null-sink media.class=Audio/Sink sink_name=lighthost)
+
+# Starting lightHost
+
+# Wine outputs a lot of "fixme" strings that don't give
+# any useful information so i redirected them to /dev/null
+
+wine "$LIGHTHOST" &> /dev/null
+
+# After closing lightHost unloading pulseaudio module
+
+pactl unload-module $MODULEID
