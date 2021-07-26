@@ -31,7 +31,7 @@ Installation
 2. Create new `wineprefix` and setup it for lightHost:
 ```bash
 # This will create new wineprefix in "$HOME/.local/share/wineprefixes/lighthost"
-# and install needed by lightHost components to it.
+# and install needed by lightHost and most VST3 plugins components to it.
 winetricks prefix=lighthost d3dcompiler_43 d3dx9 d9vk dotnet40 gdiplus mfc42 arial tahoma dxvk
 ```
 3. _Only if you are using WAYLAND or lightHost does not appear in taskbar:_
